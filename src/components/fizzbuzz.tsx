@@ -16,6 +16,13 @@ export default function FizzBuzz(): JSX.Element {
       newValue((x) => [...x, currentCounter]);
     }
   };
+  const resetCounter = () => {
+    newCounter(2);
+    newValue([1]);
+  };
+  const Previous = () => {
+    newValue(currentValue.slice(0, currentValue.length - 1));
+  };
   return (
     <>
       <h1>Fizz-Buzz App</h1>
@@ -23,6 +30,8 @@ export default function FizzBuzz(): JSX.Element {
       <p>{currentValue.join(", ")}</p>
       <hr />
       <button onClick={nextButton}>Next</button>
+      <button onClick={Previous}>Previous</button>
+      <button onClick={resetCounter}>Reset</button>
     </>
   );
 }
